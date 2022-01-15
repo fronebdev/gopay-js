@@ -1,7 +1,7 @@
 {
   "name": "gopay-js",
   "version": "1.0.0",
-  "main": "src/gopay.ts",
+  "main": "src/index.ts",
   "repository": "git@github.com:fronebdev/gopay-js.git",
   "author": "Froneb s.r.o. <hello@froneb.com>",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "chalk": "^4.1.0",
     "ts-node": "^9.1.1",
     "ts-node-dev": "^1.1.6",
