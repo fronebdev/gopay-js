@@ -7,6 +7,5 @@
  */
 
 import goPay from "./factory/goPay";
-import { with_gopay } from "./helpers";
 
 export * from "./factory/goPay"

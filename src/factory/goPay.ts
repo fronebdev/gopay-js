@@ -29,12 +29,12 @@ class goPay {
       console.log(with_gopay("Initializating..."));
   }
 
-  getToken() {
+  async getToken() {
       const params = new URLSearchParams();
       params.append("grant_type", "client_credentials")
       params.append("scope", "payment-create")
 
-      const res = axios({
+      const res = await axios({
         url: this.url + "/oauth2/token",
         method: "POST",
         headers: {
@@ -45,7 +45,7 @@ class goPay {
         data: params,
       })
 
-    console.log("Ss");
+      return res.data
   }
 }
 
