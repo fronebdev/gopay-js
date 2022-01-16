@@ -1,5 +1,5 @@
 {
-  "name": "gopay-js",
+  "name": "@fronebdev/gopay-js",
   "version": "1.0.0",
   "main": "src/index.ts",
   "repository": "git@github.com:fronebdev/gopay-js.git",
