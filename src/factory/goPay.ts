@@ -10,7 +10,7 @@ import axios from "axios";
 import { with_gopay } from "../helpers";
 import { gopay } from "../types/gopay";
 
-class goPay {
+export class goPay {
   private url: string;
   private credentials: gopay.credentials;
   private __log: boolean;
@@ -28,7 +28,7 @@ class goPay {
     if (log) console.log(with_gopay("Initializating..."));
   }
 
-  async getToken() {
+  async getTokens() {
     const params = new URLSearchParams();
     params.append("grant_type", "client_credentials");
     params.append("scope", "payment-create");
@@ -51,5 +51,3 @@ class goPay {
     return res.data;
   }
 }
-
-export default goPay;

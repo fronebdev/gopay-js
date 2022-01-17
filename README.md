@@ -23,11 +23,13 @@ $ yarn add @fronebdev/gopay-js
 ## Tree
 
 - init
-- getToken()
+- getTokens()
 
 ### Initialization
 
 ```ts
+import { goPay } from "gopay-js";
+
 const gp = new goPay({
   log: true,
   enviroment: "test",
@@ -42,11 +44,16 @@ const gp = new goPay({
 
 All methodes included in library.
 
-### getToken()
+### getTokens()
 
-the getToken() method returns all the necessary keys, to work with GoPay here is example.:
+the getTokens() method returns all the necessary keys, to work with GoPay here is example.:
+
+```ts
+gp.getTokens();
+```
 
 ```json
+//returns
 {
   "token_type": "bearer",
   "access_token": "token",

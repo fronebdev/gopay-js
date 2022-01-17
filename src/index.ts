@@ -6,7 +6,6 @@
  * @year 2022
  */
 
-import goPay from "./factory/goPay";
-import { with_gopay } from "./helpers";
+import { goPay } from "./factory/goPay";
 
-export * from "./factory/goPay";
+export { goPay };
