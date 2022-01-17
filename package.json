@@ -2,7 +2,10 @@
   "name": "@fronebdev/gopay-js",
   "version": "1.0.0",
   "main": "src/index.ts",
-  "repository": "git@github.com:fronebdev/gopay-js.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fronebdev/gopay-js.git"
+  },
   "author": "Froneb s.r.o. <hello@froneb.com>",
   "license": "MIT",
   "description": "The only functional library for GoPay payment gateway.",
@@ -29,5 +32,13 @@
     "test": "tap tests/",
     "format": "prettier --write .",
     "prepublish": "yarn format && yarn compile && yarn test"
+  },
+  "bugs": {
+    "url": "https://github.com/fronebdev/gopay-js/issues"
+  },
+  "homepage": "https://github.com/fronebdev/gopay-js#readme",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
   }
 }
