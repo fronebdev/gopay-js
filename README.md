@@ -65,6 +65,14 @@ gp.getTokens();
 }
 ```
 
+### getAccessToken()
+
+```ts
+gp.getAccessToken();
+```
+
+Returns only `access_token` for necessary Authorization
+
 ## 🙅🏿‍♂️ Used OSS
 
 - Chalk
