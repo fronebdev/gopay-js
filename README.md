@@ -24,6 +24,7 @@ $ yarn add gopay-js
 
 - init
 - getTokens()
+- getAllowedTokens()
 
 ### Initialization
 
