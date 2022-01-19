@@ -13,9 +13,9 @@ The only functional library for GoPay payment gateway.
 ### Installation
 
 ```bash
-$ npm i @fronebdev/gopay-js
+$ npm i gopay-js
 # or if you are using Yarn
-$ yarn add @fronebdev/gopay-js
+$ yarn add gopay-js
 ```
 
 # 🖇 Documentation

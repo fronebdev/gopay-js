@@ -71,5 +71,19 @@ export class goPay {
 
     return res.data.access_token;
   }
+    async getAllowedMethodes(currency: string) {
+      const res = await axios({
+        url: this.url + "/eshops/eshop/" + this.credentials.goID + "/payment-instruments/" + currency,
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization:
+            "Bearer " + await this.getAccessToken(),
+        },
+      });
+
+    return res.data;
+  }
 
 }
