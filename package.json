@@ -1,7 +1,8 @@
 {
   "name": "@fronebdev/gopay-js",
-  "version": "1.0.1",
-  "main": "src/index.ts",
+  "version": "1.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/fronebdev/gopay-js.git"
@@ -36,9 +37,5 @@
   "bugs": {
     "url": "https://github.com/fronebdev/gopay-js/issues"
   },
-  "homepage": "https://github.com/fronebdev/gopay-js#readme",
-  "directories": {
-    "example": "examples",
-    "test": "tests"
-  }
+  "homepage": "https://github.com/fronebdev/gopay-js#readme"
 }

@@ -6,6 +6,4 @@
  * @year 2022
  */
 
-import { goPay } from "./factory/goPay";
-
-export { goPay };
+export * from "./factory/goPay";

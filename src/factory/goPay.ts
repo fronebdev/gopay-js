@@ -25,7 +25,7 @@ export class goPay {
       this.url = "https://gate.gopay.cz/api";
     }
 
-    if (log) console.log(with_gopay("Initializating..."));
+    if (this.__log) console.log(with_gopay("Initializating..."));
   }
 
   async getTokens() {
