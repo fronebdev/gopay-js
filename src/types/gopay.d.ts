@@ -9,12 +9,13 @@
 export namespace gopay {
   export interface goPayConstructor {
     credentials: credentials;
-    enviroment: "test" | "production";
+    enviroment: "sandbox" | "production";
     log: boolean;
   }
 
   export type credentials = {
     clientID: string;
+    goID: string;
     clientSecret: string;
   };
 }

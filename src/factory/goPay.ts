@@ -11,21 +11,19 @@ import { with_gopay } from "../helpers";
 import { gopay } from "../types/gopay";
 
 export class goPay {
-  private url: string;
+  private url = "https://gate.gopay.cz/api;";
   private credentials: gopay.credentials;
-  private __log: boolean;
+  private __log: boolean ;
 
   constructor({ credentials, enviroment, log }: gopay.goPayConstructor) {
-    this.__log = log;
+    this.__log = log
     this.credentials = credentials;
 
-    if (enviroment == "test") {
+    if (enviroment == "sandbox") {
       this.url = "https://gw.sandbox.gopay.com/api";
-    } else {
-      this.url = "https://gate.gopay.cz/api";
     }
 
-    if (this.__log) console.log(with_gopay("Initializating..."));
+    if (log) console.log(with_gopay("Initializating..."));
   }
 
   async getTokens() {
