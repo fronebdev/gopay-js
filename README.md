@@ -5,7 +5,7 @@
 <h1 align="center">gopay-js</h1>
 
 <div align="center">
-The only functional library for GoPay payment gateway.
+The only functional javascript library for GoPay payment gateway.
 </div>
 
 ## ⚡️ Getting Started
@@ -26,7 +26,11 @@ GoPay
 
 - init
 - getTokens()
-- getAllowedTokens()
+- getAccessToken()
+
+Payments
+
+- getStatus()
 
 Misc
 
@@ -80,6 +84,26 @@ gp.getAccessToken();
 
 Returns only `access_token` for necessary Authorization
 
+## Payments
+
+It is necessary to create a payment before calling the payment gateway.
+
+```ts
+import { Payments } from "gopay-js";
+
+const payments = new Payments({
+  client: gp,
+});
+```
+
+### getStatus()
+
+The payment status functionality allows the point of sale to find out the current status of a previously created payment. By default, the payment status is queried upon receipt of a payment status change notification.
+
+```ts
+payments.getStatus("payment_id");
+```
+
 ## Misc
 
 ```ts
@@ -95,7 +119,7 @@ const misc = new Misc({
 The method returns the JSON structure of all allowed payment methods on the e-shop profile. You only need to fill up `currency` option.
 
 ```ts
-misc.getAllowedMethodes("CZK");
+misc.getAllowedMethodes("currency");
 ```
 
 ## 🙅🏿‍♂️ Used OSS
