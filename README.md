@@ -5,7 +5,7 @@
 <h1 align="center">gopay-js</h1>
 
 <div align="center">
-The only functional library for GoPay payment gateway.
+The only functional javascript library for GoPay payment gateway.
 </div>
 
 ## ⚡️ Getting Started
@@ -98,7 +98,7 @@ const payments = new Payments({
 
 ### getStatus()
 
-
+The payment status functionality allows the point of sale to find out the current status of a previously created payment. By default, the payment status is queried upon receipt of a payment status change notification.
 
 ```ts
 payments.getStatus("payment_id");

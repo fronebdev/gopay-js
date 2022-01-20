@@ -11,7 +11,7 @@ import { GoPay } from "..";
 import { payments } from "../types/payments";
 
 export class Payments {
-  private __sufix  = "/payments/payment";
+  private __sufix = "/payments/payment";
   private __client: GoPay;
 
   constructor({ client }: payments.Constructor) {
@@ -21,14 +21,13 @@ export class Payments {
   async getStatus(payment_id: number) {
     const res = await axios({
       url: this.__client.url + this.__sufix + "/" + payment_id,
-      method: "POST",
+      method: "GET",
       headers: {
-        "Accept": "application/json",
-        "Authorization": "Bearer " + this.__client.getAccessToken(),
+        Accept: "application/json",
+        Authorization: "Bearer " + this.__client.getAccessToken(),
       },
     });
 
-    return res.data
+    return res.data;
   }
-
 }
