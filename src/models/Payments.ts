@@ -24,7 +24,7 @@ export class Payments {
       method: "GET",
       headers: {
         Accept: "application/json",
-        Authorization: "Bearer " + this.__client.getAccessToken(),
+        Authorization: "Bearer " + (await this.__client.getAccessToken()),
       },
     });
 
