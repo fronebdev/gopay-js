@@ -13,9 +13,9 @@ The only functional library for GoPay payment gateway.
 ### Installation
 
 ```bash
-$ npm i @fronebdev/gopay-js
+$ npm i gopay-js
 # or if you are using Yarn
-$ yarn add @fronebdev/gopay-js
+$ yarn add gopay-js
 ```
 
 # 🖇 Documentation
@@ -24,15 +24,16 @@ $ yarn add @fronebdev/gopay-js
 
 - init
 - getTokens()
+- getAllowedTokens()
 
 ### Initialization
 
-Setting up `enviroment` is used to switch between sandbox (`sandbox`) and the production gateway (`production`). 
+Setting up `enviroment` is used to switch between sandbox (`sandbox`) and the production gateway (`production`).
 
 ```ts
 import { goPay } from "gopay-js";
 
-const gp = new goPay({
+const client = new goPay({
   log: true,
   enviroment: "sandbox",
   credentials: {

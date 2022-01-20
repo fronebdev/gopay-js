@@ -10,13 +10,13 @@ import axios from "axios";
 import { with_gopay } from "../helpers";
 import { gopay } from "../types/gopay";
 
-export class goPay {
-  private url = "https://gate.gopay.cz/api;";
-  private credentials: gopay.credentials;
-  private __log: boolean ;
+export class GoPay {
+  public url = "https://gate.gopay.cz/api;";
+  public credentials: gopay.credentials;
+  public __log: boolean;
 
-  constructor({ credentials, enviroment, log }: gopay.goPayConstructor) {
-    this.__log = log
+  constructor({ credentials, enviroment, log }: gopay.Constructor) {
+    this.__log = log;
     this.credentials = credentials;
 
     if (enviroment == "sandbox") {
@@ -72,4 +72,7 @@ export class goPay {
     return res.data.access_token;
   }
 
+  log() {
+    return this.__log;
+  }
 }

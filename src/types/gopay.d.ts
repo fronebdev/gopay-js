@@ -7,7 +7,7 @@
  */
 
 export namespace gopay {
-  export interface goPayConstructor {
+  export interface Constructor {
     credentials: credentials;
     enviroment: "sandbox" | "production";
     log: boolean;
