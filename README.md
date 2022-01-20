@@ -22,11 +22,17 @@ $ yarn add gopay-js
 
 ## Tree
 
+GoPay
+
 - init
 - getTokens()
 - getAllowedTokens()
 
-### Initialization
+Misc
+
+- getAllowedMethodes()
+
+### GoPay
 
 Setting up `enviroment` is used to switch between sandbox (`sandbox`) and the production gateway (`production`).
 
@@ -46,7 +52,7 @@ const client = new goPay({
 
 ## Methodes
 
-All methodes included in library.
+All methodes included in base module.
 
 ### getTokens()
 
@@ -73,6 +79,24 @@ gp.getAccessToken();
 ```
 
 Returns only `access_token` for necessary Authorization
+
+## Misc
+
+```ts
+import { Misc } from "gopay-js";
+
+const misc = new Misc({
+  client: gp,
+});
+```
+
+### getAllowedMethodes()
+
+The method returns the JSON structure of all allowed payment methods on the e-shop profile. You only need to fill up `currency` option.
+
+```ts
+misc.getAllowedMethodes("CZK");
+```
 
 ## 🙅🏿‍♂️ Used OSS
 
