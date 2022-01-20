@@ -28,12 +28,12 @@ $ yarn add gopay-js
 
 ### Initialization
 
-Setting up `enviroment` is used to switch between sandbox (`sandbox`) and the production gateway (`production`). 
+Setting up `enviroment` is used to switch between sandbox (`sandbox`) and the production gateway (`production`).
 
 ```ts
 import { goPay } from "gopay-js";
 
-const gp = new goPay({
+const client = new goPay({
   log: true,
   enviroment: "sandbox",
   credentials: {

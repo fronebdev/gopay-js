@@ -6,4 +6,4 @@
  * @year 2022
  */
 
-export * from "./factory/goPay";
+export * from "./factory/GoPay";
