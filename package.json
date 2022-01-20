@@ -3,6 +3,7 @@
   "version": "1.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "keywords": ["gopay", "gopay-api", "payment-gateway", "payments"],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/fronebdev/gopay-js.git"
