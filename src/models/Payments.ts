@@ -9,5 +9,5 @@
 import { payments } from "../types/payments";
 
 export class Payments {
-  constructor({ client }: payments.Constructor) {}
+  constructor({}: payments.Constructor) {}
 }

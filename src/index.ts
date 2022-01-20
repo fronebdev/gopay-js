@@ -7,3 +7,4 @@
  */
 
 export * from "./factory/GoPay";
+export * from "./models/Misc";
