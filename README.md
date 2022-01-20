@@ -26,7 +26,11 @@ GoPay
 
 - init
 - getTokens()
-- getAllowedTokens()
+- getAccessToken()
+
+Payments
+
+- getStatus()
 
 Misc
 
@@ -80,6 +84,26 @@ gp.getAccessToken();
 
 Returns only `access_token` for necessary Authorization
 
+## Payments
+
+It is necessary to create a payment before calling the payment gateway.
+
+```ts
+import { Payments } from "gopay-js";
+
+const payments = new Payments({
+  client: gp,
+});
+```
+
+### getStatus()
+
+
+
+```ts
+payments.getStatus("payment_id");
+```
+
 ## Misc
 
 ```ts
@@ -95,7 +119,7 @@ const misc = new Misc({
 The method returns the JSON structure of all allowed payment methods on the e-shop profile. You only need to fill up `currency` option.
 
 ```ts
-misc.getAllowedMethodes("CZK");
+misc.getAllowedMethodes("currency");
 ```
 
 ## 🙅🏿‍♂️ Used OSS
