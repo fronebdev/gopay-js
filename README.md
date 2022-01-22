@@ -117,21 +117,21 @@ payments.createPayment({
     city: "",
     street: "",
     postal_code: "",
-    country_code: ""
+    country_code: "",
   },
   order_info: {
     amount: 0,
     currency: "",
     order_number: "",
     order_description: "",
-    lang: ""
+    lang: "",
   },
   callback: {
     return_url: "",
-    notification_url: ""
-  }
-  items: []
-})
+    notification_url: "",
+  },
+  items: [],
+});
 ```
 
 ## Misc
