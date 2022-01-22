@@ -50,7 +50,7 @@ export class GoPay {
   }
 
   async getAccessToken() {
-    const token = JSON.parse(await this.getTokens())
+    const token = JSON.parse(await this.getTokens());
 
     return token.access_token;
   }
