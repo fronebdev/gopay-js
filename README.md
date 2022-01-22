@@ -18,9 +18,7 @@ $ npm i gopay-js
 $ yarn add gopay-js
 ```
 
-# 🖇 Documentation
-
-## Tree
+# Tree
 
 GoPay
 
@@ -35,6 +33,8 @@ Payments
 Misc
 
 - getAllowedMethodes()
+
+# 🖇 Documentation
 
 ### GoPay
 
@@ -63,7 +63,7 @@ All methodes included in base module.
 the getTokens() method returns all the necessary keys, to work with GoPay here is example.:
 
 ```ts
-gp.getTokens();
+client.getTokens();
 ```
 
 ```json
@@ -79,7 +79,7 @@ gp.getTokens();
 ### getAccessToken()
 
 ```ts
-gp.getAccessToken();
+client.getAccessToken();
 ```
 
 Returns only `access_token` for necessary Authorization
@@ -92,7 +92,7 @@ It is necessary to create a payment before calling the payment gateway.
 import { Payments } from "gopay-js";
 
 const payments = new Payments({
-  client: gp,
+  client: client,
 });
 ```
 
@@ -110,7 +110,7 @@ payments.getStatus(payment_id);
 import { Misc } from "gopay-js";
 
 const misc = new Misc({
-  client: gp,
+  client: client,
 });
 ```
 
