@@ -29,6 +29,7 @@ GoPay
 Payments
 
 - getStatus()
+- createPayment()
 
 Misc
 
@@ -102,6 +103,35 @@ The payment status functionality allows the point of sale to find out the curren
 
 ```ts
 payments.getStatus(payment_id);
+```
+
+### createPayment()
+
+```ts
+payments.createPayment({
+  contact: {
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    city: "",
+    street: "",
+    postal_code: "",
+    country_code: ""
+  },
+  order_info: {
+    amount: 0,
+    currency: "",
+    order_number: "",
+    order_description: "",
+    lang: ""
+  },
+  callback: {
+    return_url: "",
+    notification_url: ""
+  }
+  items: []
+})
 ```
 
 ## Misc

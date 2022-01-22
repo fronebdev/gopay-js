@@ -16,6 +16,8 @@ export namespace payments {
   export interface DefaultPayment {
     contact: contact;
     order_info: order_info;
+    callback: callback;
+    items: object;
   }
 
   export interface item {
@@ -34,6 +36,11 @@ export namespace payments {
     order_number: string
     order_description: string
     lang: string
+  }
+
+  export type callback = {
+    return_url: string
+    notification_url: string
   }
 
   export type contact = {

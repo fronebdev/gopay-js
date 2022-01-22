@@ -27,6 +27,7 @@ export class Payments {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + (await this.__client.getAccessToken()),
       },
+      //TODO: add additional params
       data: {
         "payer": {
             "allowed_payment_instruments": [
@@ -54,32 +55,16 @@ export class Payments {
             "type": "ACCOUNT",
             "goid": this.__client.credentials.goID
         },
-        "items": [
-            {
-                "type": "DISCOUNT",
-                "name": "Obuv",
-                "amount": 119990,
-                "count": 1,
-                "vat_rate": "21",
-                "ean": 1234567890123,
-                "product_url": "https://www.eshop.cz/boty/lodicky"
-            }
-        ],
+        "items": data.items,
         "amount": data.order_info.amount,
         "currency": data.order_info.currency,
         "order_number": data.order_info.order_number,
         "order_description": data.order_info.order_description,
         "lang": data.order_info.lang,
         "callback": {
-            "return_url": "https://www.example.com/return",
-            "notification_url": "https://www.example.com/notify"
+            "return_url": data.callback.return_url,
+            "notification_url": data.callback.notification_url
         },
-        "additional_params": [
-            {
-                "name": "invoicenumber",
-                "value": "2015001003"
-            }
-        ]
       }
     });
 
