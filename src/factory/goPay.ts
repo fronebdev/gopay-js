@@ -50,26 +50,9 @@ export class GoPay {
   }
 
   async getAccessToken() {
-    const params = new URLSearchParams();
-    params.append("grant_type", "client_credentials");
-    params.append("scope", "payment-create");
+    const token = JSON.parse(await this.getTokens());
 
-    const res = await axios({
-      url: this.url + "/oauth2/token",
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded",
-        Authorization:
-          "Basic " +
-          new Buffer(
-            this.credentials.clientID + ":" + this.credentials.clientSecret
-          ).toString("base64"),
-      },
-      data: params,
-    });
-
-    return res.data.access_token;
+    return token.access_token;
   }
 
   log() {
