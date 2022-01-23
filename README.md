@@ -23,17 +23,17 @@ $ yarn add gopay-js
 [GoPay](https://github.com/fronebdev/gopay-js/blob/main/README.md#GoPay)
 
 - [init](https://github.com/fronebdev/gopay-js/blob/main/README.md#GoPay)
-- [getTokens()](https://github.com/fronebdev/gopay-js/blob/main/README.md#getTokens())
-- [getAccessToken()](https://github.com/fronebdev/gopay-js/blob/main/README.md#getAccessToken())
+- [getTokens()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getTokens()>)
+- [getAccessToken()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getAccessToken()>)
 
 [Payments](https://github.com/fronebdev/gopay-js/blob/main/README.md#Payments)
 
-- [getStatus()](https://github.com/fronebdev/gopay-js/blob/main/README.md#getStatus())
-- [createPayment()](https://github.com/fronebdev/gopay-js/blob/main/README.md#createPayment())
+- [getStatus()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getStatus()>)
+- [createPayment()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#createPayment()>)
 
 [Misc](https://github.com/fronebdev/gopay-js/blob/main/README.md#Misc)
 
-- [getAllowedMethodes()](https://github.com/fronebdev/gopay-js/blob/main/README.md#getAllowedMethodes())
+- [getAllowedMethodes()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getAllowedMethodes()>)
 
 # 🖇 Documentation
 
@@ -139,11 +139,13 @@ payments.createPayment({
 The `items` parameter in body must contain order items in a certain form, so we have pre-created a type for you.
 
 You can import simply import it and use it
+
 ```ts
-import { item } from "gopay-js"
+import { item } from "gopay-js";
 ```
 
 Here is the form
+
 ```ts
 type: string;
 name: string;
