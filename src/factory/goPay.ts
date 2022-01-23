@@ -11,7 +11,7 @@ import { with_gopay } from "../helpers";
 import { gopay } from "../types/gopay";
 
 export class GoPay {
-  public url = "https://gate.gopay.cz/api;";
+  public url: string = "https://gate.gopay.cz/api;";
   public credentials: gopay.credentials;
   public __log: boolean;
 
@@ -50,9 +50,26 @@ export class GoPay {
   }
 
   async getAccessToken() {
-    const token = JSON.parse(await this.getTokens());
+    const params = new URLSearchParams();
+    params.append("grant_type", "client_credentials");
+    params.append("scope", "payment-create");
 
-    return token.access_token;
+    const res = await axios({
+      url: this.url + "/oauth2/token",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization:
+          "Basic " +
+          new Buffer(
+            this.credentials.clientID + ":" + this.credentials.clientSecret
+          ).toString("base64"),
+      },
+      data: params,
+    });
+
+    return res.data.access_token;
   }
 
   log() {

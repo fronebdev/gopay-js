@@ -20,18 +20,18 @@ $ yarn add gopay-js
 
 # Tree
 
-GoPay
+[GoPay](https://github.com/fronebdev/gopay-js/blob/main/README.md#GoPay)
 
 - init
 - getTokens()
 - getAccessToken()
 
-Payments
+[Payments](https://github.com/fronebdev/gopay-js/blob/main/README.md#Payments)
 
 - getStatus()
 - createPayment()
 
-Misc
+[Misc](https://github.com/fronebdev/gopay-js/blob/main/README.md#Misc)
 
 - getAllowedMethodes()
 
@@ -107,6 +107,8 @@ payments.getStatus(payment_id);
 
 ### createPayment()
 
+The payment is intended for payment of the order by credit card, bank transfer, GoPay account and other payment methods.
+
 ```ts
 payments.createPayment({
   contact: {
@@ -117,21 +119,41 @@ payments.createPayment({
     city: "",
     street: "",
     postal_code: "",
-    country_code: ""
+    country_code: "",
   },
   order_info: {
     amount: 0,
     currency: "",
     order_number: "",
     order_description: "",
-    lang: ""
+    lang: "",
   },
   callback: {
     return_url: "",
-    notification_url: ""
-  }
-  items: []
-})
+    notification_url: "",
+  },
+  items: [],
+});
+```
+
+The `items` parameter in body must contain order items in a certain form, so we have pre-created a type for you.
+
+You can import simply import it and use it
+
+```ts
+import { item } from "gopay-js";
+```
+
+Here is the form
+
+```ts
+type: string;
+name: string;
+amount: number;
+count: number;
+vat_rate: string;
+ean: number;
+product_url: string;
 ```
 
 ## Misc
