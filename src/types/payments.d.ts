@@ -14,10 +14,18 @@ export namespace payments {
   }
 
   export interface DefaultPayment {
+    payment_info: payment_info;
     contact: contact;
     order_info: order_info;
     callback: callback;
     items: object;
+  }
+
+  export type payment_info = {
+    allowed_payment_instruments: object;
+    default_payment_instrument: string;
+    allowed_swifts: object;
+    default_swift: string;
   }
 
   export type order_info = {

@@ -111,6 +111,12 @@ The payment is intended for payment of the order by credit card, bank transfer, 
 
 ```ts
 payments.createPayment({
+  payment_info: {
+    allowed_payment_instruments: [];
+    default_payment_instrument: "";
+    allowed_swifts: [];
+    default_swift: "";
+  }
   contact: {
     first_name: "",
     last_name: "",

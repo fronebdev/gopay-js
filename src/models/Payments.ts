@@ -30,10 +30,10 @@ export class Payments {
       //TODO: add additional params
       data: {
         payer: {
-          allowed_payment_instruments: ["PAYMENT_CARD", "BANK_ACCOUNT"],
-          default_payment_instrument: "PAYMENT_CARD",
-          allowed_swifts: ["FIOBCZPP", "BREXCZPP"],
-          default_swift: "FIOBCZPP",
+          allowed_payment_instruments: data.payment_info.allowed_payment_instruments,
+          default_payment_instrument: data.payment_info.default_payment_instrument,
+          allowed_swifts: data.payment_info.allowed_swifts,
+          default_swift: data.payment_info.default_swift,
           contact: {
             first_name: data.contact.first_name,
             last_name: data.contact.last_name,
