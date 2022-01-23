@@ -22,18 +22,18 @@ $ yarn add gopay-js
 
 [GoPay](https://github.com/fronebdev/gopay-js/blob/main/README.md#GoPay)
 
-- [init](https://github.com/fronebdev/gopay-js/blob/main/README.md#GoPay)
-- [getTokens()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getTokens()>)
-- [getAccessToken()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getAccessToken()>)
+- init
+- getTokens()
+- getAccessToken()
 
 [Payments](https://github.com/fronebdev/gopay-js/blob/main/README.md#Payments)
 
-- [getStatus()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getStatus()>)
-- [createPayment()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#createPayment()>)
+- getStatus()
+- createPayment()
 
 [Misc](https://github.com/fronebdev/gopay-js/blob/main/README.md#Misc)
 
-- [getAllowedMethodes()](<https://github.com/fronebdev/gopay-js/blob/main/README.md#getAllowedMethodes()>)
+- getAllowedMethodes()
 
 # 🖇 Documentation
 
