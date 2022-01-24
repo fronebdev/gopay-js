@@ -77,4 +77,23 @@ export class Payments {
 
     return res.data;
   }
+
+  async refundPayment(payment_id: number, amount: number) {
+    const params = new URLSearchParams();
+    params.append("amount", String(amount));
+
+    const res = await axios({
+      url: this.__client.url + this.__sufix + "/" + payment_id + "/refund",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization:
+          "Bearer " + (await this.__client.getAccessToken()),
+      },
+      data: params,
+    });
+
+    return res.data;
+  }
 }
