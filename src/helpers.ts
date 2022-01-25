@@ -10,3 +10,6 @@ import chalk from "chalk";
 
 export const with_gopay = (...args: any[]) =>
   chalk.blueBright("[GOPAY] ") + chalk.green(args.join(" "));
+
+export const createToken = (clientID: string, clientSecret: string) =>
+new Buffer(clientID + ":" + clientSecret).toString("base64");

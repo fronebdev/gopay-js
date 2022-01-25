@@ -30,10 +30,10 @@ export class Payments {
       //TODO: add additional params
       data: {
         payer: {
-          allowed_payment_instruments: ["PAYMENT_CARD", "BANK_ACCOUNT"],
-          default_payment_instrument: "PAYMENT_CARD",
-          allowed_swifts: ["FIOBCZPP", "BREXCZPP"],
-          default_swift: "FIOBCZPP",
+          allowed_payment_instruments: data.payment_info.allowed_payment_instruments,
+          default_payment_instrument: data.payment_info.default_payment_instrument,
+          allowed_swifts: data.payment_info.allowed_swifts,
+          default_swift: data.payment_info.default_swift,
           contact: {
             first_name: data.contact.first_name,
             last_name: data.contact.last_name,
@@ -77,4 +77,46 @@ export class Payments {
 
     return res.data;
   }
+
+  async refundPayment(payment_id: number, amount: number) {
+    const params = new URLSearchParams();
+    params.append("amount", String(amount));
+
+    const res = await axios({
+      url: this.__client.url + this.__sufix + "/" + payment_id + "/refund",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization:
+          "Bearer " + (await this.__client.getAccessToken()),
+      },
+      data: params,
+    });
+
+    return res.data;
+  }
+
+  async createRecurrence(data: payments.Recurrence) {
+    const res = await axios({
+      url: this.__client.url + this.__sufix,
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + (await this.__client.getAccessToken()),
+      },
+      //TODO: add aditional params
+      data: {
+        amount: data.amount,
+        currency: data.currency,
+        order_number: data.order_number,
+        order_description: data.order_discription,
+        items: data.items,
+      },
+    });
+
+    return res.data;
+  }
+
 }
