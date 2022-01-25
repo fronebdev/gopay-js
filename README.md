@@ -30,6 +30,7 @@ $ yarn add gopay-js
 
 - getStatus()
 - createPayment()
+- refundPayment()
 
 [Misc](https://github.com/fronebdev/gopay-js/blob/main/README.md#Misc)
 
@@ -160,6 +161,15 @@ count: number;
 vat_rate: string;
 ean: number;
 product_url: string;
+```
+
+### refundPayment()
+
+Payment refund allows you to return funds for a payment that has already been made to the customer.
+Refunds can be made in two ways. A full refund allows you to refund the full amount based on the `amount` parameter, while a partial refund specifies the refund amount.
+
+```ts
+payments.refundPayment(payment_id, amount)
 ```
 
 ## Misc

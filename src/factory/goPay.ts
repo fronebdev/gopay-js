@@ -7,7 +7,7 @@
  */
 
 import axios from "axios";
-import { with_gopay } from "../helpers";
+import { createToken, with_gopay } from "../helpers";
 import { gopay } from "../types/gopay";
 
 export class GoPay {
@@ -38,10 +38,7 @@ export class GoPay {
         Accept: "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
         Authorization:
-          "Basic " +
-          new Buffer(
-            this.credentials.clientID + ":" + this.credentials.clientSecret
-          ).toString("base64"),
+          "Basic " + createToken(this.credentials.clientID, this.credentials.clientSecret),
       },
       data: params,
     });
