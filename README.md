@@ -200,15 +200,15 @@ payment.createRecurrence({
   order_description: "some desc.",
   items: [
     {
-      "type": "ITEM",
-      "name": "Pojisteni",
-      "amount": 119900,
-      "count": 1,
-      "vat_rate": "21",
-      "ean": 1234567890123,
-      "product_url": "https://www.eshop.cz/pojisteni"
-    }
-  ]
+      type: "ITEM",
+      name: "Pojisteni",
+      amount: 119900,
+      count: 1,
+      vat_rate: "21",
+      ean: 1234567890123,
+      product_url: "https://www.eshop.cz/pojisteni",
+    },
+  ],
 });
 ```
 
