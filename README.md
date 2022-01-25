@@ -188,16 +188,16 @@ payments.createRecurrence({
   order_number: "OBJ1233878",
   order_description: "some desc.",
   items: [
-  {
-    "type": "ITEM",
-    "name": "Pojisteni",
-    "amount": 119900,
-    "count": 1,
-    "vat_rate": "21",
-    "ean": 1234567890123,
-    "product_url": "https://www.eshop.cz/pojisteni"
-  }
-  ]
+    {
+      type: "ITEM",
+      name: "Pojisteni",
+      amount: 119900,
+      count: 1,
+      vat_rate: "21",
+      ean: 1234567890123,
+      product_url: "https://www.eshop.cz/pojisteni",
+    },
+  ],
 });
 ```
 
@@ -228,7 +228,7 @@ misc.accountStatement({
   date_from: new Date(),
   date_to: new Date(),
   currency: "CZK",
-  format: "CSV_A"
+  format: "CSV_A",
 });
 ```
 
@@ -250,11 +250,13 @@ Here is a list and description of the types created, which are for simplificatio
 The `items` parameter in body must contain order items in a certain form, so we have pre-created a type for you.
 
 You can import simply import it and use it
+
 ```ts
 import { item } from "gopay-js";
 ```
 
 Here is the form
+
 ```ts
 type: string;
 name: string;

@@ -19,9 +19,9 @@ export class Payments {
   }
 
   /**
-   * 
-   * @param data 
-   * @returns 
+   *
+   * @param data
+   * @returns
    */
   async createPayment(data: payments.DefaultPayment) {
     const res = await axios({
@@ -73,9 +73,9 @@ export class Payments {
   }
 
   /**
-   * 
-   * @param payment_id 
-   * @returns 
+   *
+   * @param payment_id
+   * @returns
    */
   async getStatus(payment_id: number) {
     const res = await axios({
@@ -91,10 +91,10 @@ export class Payments {
   }
 
   /**
-   * 
-   * @param payment_id 
-   * @param amount 
-   * @returns 
+   *
+   * @param payment_id
+   * @param amount
+   * @returns
    */
   async refundPayment(payment_id: number, amount: number) {
     const params = new URLSearchParams();
@@ -115,9 +115,9 @@ export class Payments {
   }
 
   /**
-   * 
-   * @param data 
-   * @returns 
+   *
+   * @param data
+   * @returns
    */
   async createRecurrence(data: payments.Recurrence) {
     const res = await axios({
