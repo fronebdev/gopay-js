@@ -96,4 +96,27 @@ export class Payments {
 
     return res.data;
   }
+
+  async createRecurrence(data: payments.Recurrence) {
+    const res = await axios({
+      url: this.__client.url + this.__sufix,
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + (await this.__client.getAccessToken()),
+      },
+      //TODO: add aditional params
+      data: {
+        amount: data.amount,
+        currency: data.currency,
+        order_number: data.order_number,
+        order_description: data.order_discription,
+        items: data.items,
+      },
+    });
+
+    return res.data;
+  }
+
 }

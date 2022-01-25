@@ -113,33 +113,49 @@ The payment is intended for payment of the order by credit card, bank transfer, 
 ```ts
 payments.createPayment({
   payment_info: {
-    allowed_payment_instruments: [];
-    default_payment_instrument: "";
-    allowed_swifts: [];
-    default_swift: "";
+    allowed_payment_instruments: [
+      "PAYMENT_CARD",
+      "BANK_ACCOUNT"
+    ],
+    default_payment_instrument: "PAYMENT_CARD",
+    allowed_swifts: [
+      "FIOBCZPP",
+      "BREXCZPP"
+    ],
+    default_swift: "FIOBCZPP",
   }
   contact: {
-    first_name: "",
-    last_name: "",
-    email: "",
-    phone_number: "",
-    city: "",
-    street: "",
-    postal_code: "",
-    country_code: "",
+    first_name: "Zbyněk",
+    last_name: "Žák",
+    email: "test@test.cz",
+    phone_number: "+420777456123",
+    city: "České Budějovice",
+    street: "Planá 67",
+    postal_code: "37301",
+    country_code: "CZE",
   },
   order_info: {
-    amount: 0,
-    currency: "",
-    order_number: "",
-    order_description: "",
-    lang: "",
+    amount: 119990,
+    currency: "CZK",
+    order_number: "OBJ20200825",
+    order_description: "Obuv",
+    lang: "CS",
   },
   callback: {
-    return_url: "",
-    notification_url: "",
+    return_url: "https://www.example.com/return",
+    notification_url: "https://www.example.com/notify",
   },
-  items: [],
+  items: [
+    {
+      "type": "DISCOUNT",
+      "name": "Obuv",
+      "amount": 119990,
+      "count": 1,
+      "vat_rate": "21",
+      "ean": 1234567890123,
+      "product_url": "https://www.eshop.cz/boty/lodicky"
+    }
+  ],
 });
 ```
 
@@ -169,7 +185,31 @@ Payment refund allows you to return funds for a payment that has already been ma
 Refunds can be made in two ways. A full refund allows you to refund the full amount based on the `amount` parameter, while a partial refund specifies the refund amount.
 
 ```ts
-payments.refundPayment(payment_id, amount)
+payments.refundPayment(payment_id, amount);
+```
+
+### createRecurrence()
+
+With the request, it is possible to repeat the payment on the basis of a previously established recurring payment in the ON_DEMAND mode (on request). By recurring in this mode, a subsequent payment of any amount is established. The point of sale is informed of the payment in the form of a notification of a change in the payment status.
+
+```ts
+payment.createRecurrence({
+  amount: 119900,
+  currency: "CZK",
+  order_number: "OBJ1233878",
+  order_description: "some desc.",
+  items: [
+    {
+      "type": "ITEM",
+      "name": "Pojisteni",
+      "amount": 119900,
+      "count": 1,
+      "vat_rate": "21",
+      "ean": 1234567890123,
+      "product_url": "https://www.eshop.cz/pojisteni"
+    }
+  ]
+});
 ```
 
 ## Misc

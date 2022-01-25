@@ -51,4 +51,12 @@ export namespace payments {
     postal_code: string;
     country_code: string;
   };
+
+  export interface Recurrence {
+    amount: number;
+    currency: string;
+    order_number: string;
+    order_discription: string;
+    items: object;
+  }
 }
