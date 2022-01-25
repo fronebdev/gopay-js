@@ -17,6 +17,11 @@ export class Misc {
     this.__client = client;
   }
 
+  /**
+   * 
+   * @param currency 
+   * @returns 
+   */
   async getAllowedMethodes(currency: string) {
     const res = await axios({
       url:
@@ -30,6 +35,32 @@ export class Misc {
         Accept: "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
         Authorization: "Bearer " + (await this.__client.getAccessToken()),
+      },
+    });
+
+    return res.data;
+  }
+
+  /**
+   * 
+   * @param data 
+   * @returns 
+   */
+  async accountStatement(data: misc.accountStatement) {
+    const res = await axios({
+      url: this.__client.url + "/accounts/account-statement",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + (await this.__client.getAccessToken()),
+      },
+      data: {
+        date_from: data.date_from.toDateString(),
+        date_to: data.date_to.toDateString(),
+        goid: this.__client.credentials.goID,
+        currency: data.currency,
+        format: data.format,
       },
     });
 

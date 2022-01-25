@@ -31,10 +31,12 @@ $ yarn add gopay-js
 - getStatus()
 - createPayment()
 - refundPayment()
+- createRecurrence()
 
 [Misc](https://github.com/fronebdev/gopay-js/blob/main/README.md#Misc)
 
 - getAllowedMethodes()
+- accountStatement()
 
 # 🖇 Documentation
 
@@ -228,6 +230,19 @@ The method returns the JSON structure of all allowed payment methods on the e-sh
 
 ```ts
 misc.getAllowedMethodes("currency");
+```
+
+### accountStatement()
+
+The funcionality generates statements from GoPay business account. It returns content of account statement file. More information about file types specification you can find in [Help](https://doc.gopay.com/#account-statement)
+
+```ts
+misc.accountStatement({
+  date_from: new Date(),
+  date_to: new Date(),
+  currency: "CZK",
+  format: "CSV_A"
+});
 ```
 
 ## 🙅🏿‍♂️ Used OSS
