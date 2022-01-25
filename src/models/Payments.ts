@@ -30,8 +30,10 @@ export class Payments {
       //TODO: add additional params
       data: {
         payer: {
-          allowed_payment_instruments: data.payment_info.allowed_payment_instruments,
-          default_payment_instrument: data.payment_info.default_payment_instrument,
+          allowed_payment_instruments:
+            data.payment_info.allowed_payment_instruments,
+          default_payment_instrument:
+            data.payment_info.default_payment_instrument,
           allowed_swifts: data.payment_info.allowed_swifts,
           default_swift: data.payment_info.default_swift,
           contact: {
@@ -88,8 +90,7 @@ export class Payments {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization:
-          "Bearer " + (await this.__client.getAccessToken()),
+        Authorization: "Bearer " + (await this.__client.getAccessToken()),
       },
       data: params,
     });
@@ -97,7 +98,7 @@ export class Payments {
     return res.data;
   }
 
-  async createRecurrence(data: payments.Recurrence) {
+  async createRecurrence(data: payments.Recurrence) {
     const res = await axios({
       url: this.__client.url + this.__sufix,
       method: "POST",
@@ -118,5 +119,4 @@ export class Payments {
 
     return res.data;
   }
-
 }

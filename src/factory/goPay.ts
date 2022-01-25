@@ -38,7 +38,8 @@ export class GoPay {
         Accept: "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
         Authorization:
-          "Basic " + createToken(this.credentials.clientID, this.credentials.clientSecret),
+          "Basic " +
+          createToken(this.credentials.clientID, this.credentials.clientSecret),
       },
       data: params,
     });

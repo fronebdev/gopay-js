@@ -193,22 +193,22 @@ payments.refundPayment(payment_id, amount);
 With the request, it is possible to repeat the payment on the basis of a previously established recurring payment in the ON_DEMAND mode (on request). By recurring in this mode, a subsequent payment of any amount is established. The point of sale is informed of the payment in the form of a notification of a change in the payment status.
 
 ```ts
-payment.createRecurrence({
+payments.createRecurrence({
   amount: 119900,
   currency: "CZK",
   order_number: "OBJ1233878",
   order_description: "some desc.",
   items: [
     {
-      "type": "ITEM",
-      "name": "Pojisteni",
-      "amount": 119900,
-      "count": 1,
-      "vat_rate": "21",
-      "ean": 1234567890123,
-      "product_url": "https://www.eshop.cz/pojisteni"
-    }
-  ]
+      type: "ITEM",
+      name: "Pojisteni",
+      amount: 119900,
+      count: 1,
+      vat_rate: "21",
+      ean: 1234567890123,
+      product_url: "https://www.eshop.cz/pojisteni",
+    },
+  ],
 });
 ```
 
