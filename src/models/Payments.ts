@@ -18,6 +18,11 @@ export class Payments {
     this.__client = client;
   }
 
+  /**
+   * 
+   * @param data 
+   * @returns 
+   */
   async createPayment(data: payments.DefaultPayment) {
     const res = await axios({
       url: this.__client.url + this.__sufix,
@@ -67,6 +72,11 @@ export class Payments {
     return res.data;
   }
 
+  /**
+   * 
+   * @param payment_id 
+   * @returns 
+   */
   async getStatus(payment_id: number) {
     const res = await axios({
       url: this.__client.url + this.__sufix + "/" + payment_id,
@@ -80,6 +90,12 @@ export class Payments {
     return res.data;
   }
 
+  /**
+   * 
+   * @param payment_id 
+   * @param amount 
+   * @returns 
+   */
   async refundPayment(payment_id: number, amount: number) {
     const params = new URLSearchParams();
     params.append("amount", String(amount));
@@ -98,6 +114,11 @@ export class Payments {
     return res.data;
   }
 
+  /**
+   * 
+   * @param data 
+   * @returns 
+   */
   async createRecurrence(data: payments.Recurrence) {
     const res = await axios({
       url: this.__client.url + this.__sufix,
