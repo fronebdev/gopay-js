@@ -194,21 +194,21 @@ With the request, it is possible to repeat the payment on the basis of a previou
 
 ```ts
 payments.createRecurrence({
-  amount: 119900,
+  amount: 123,
   currency: "CZK",
   order_number: "OBJ1233878",
   order_description: "some desc.",
   items: [
-    {
-      type: "ITEM",
-      name: "Pojisteni",
-      amount: 119900,
-      count: 1,
-      vat_rate: "21",
-      ean: 1234567890123,
-      product_url: "https://www.eshop.cz/pojisteni",
-    },
-  ],
+  {
+    "type": "ITEM",
+    "name": "Pojisteni",
+    "amount": 119900,
+    "count": 1,
+    "vat_rate": "21",
+    "ean": 1234567890123,
+    "product_url": "https://www.eshop.cz/pojisteni"
+  }
+  ]
 });
 ```
 
