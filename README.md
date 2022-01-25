@@ -38,6 +38,11 @@ $ yarn add gopay-js
 - getAllowedMethodes()
 - accountStatement()
 
+[Types](https://github.com/fronebdev/gopay-js/blob/main/README.md#Types)
+
+- Format
+- Item
+
 # 🖇 Documentation
 
 ### GoPay
@@ -161,25 +166,7 @@ payments.createPayment({
 });
 ```
 
-The `items` parameter in body must contain order items in a certain form, so we have pre-created a type for you.
-
-You can import simply import it and use it
-
-```ts
-import { item } from "gopay-js";
-```
-
-Here is the form
-
-```ts
-type: string;
-name: string;
-amount: number;
-count: number;
-vat_rate: string;
-ean: number;
-product_url: string;
-```
+The `items` parameter in body must contain order items in a certain form, so we have pre-created a type for you. More in Types section
 
 ### refundPayment()
 
@@ -243,6 +230,39 @@ misc.accountStatement({
   currency: "CZK",
   format: "CSV_A"
 });
+```
+
+## Types
+
+Here is a list and description of the types created, which are for simplification and safer work with this library
+
+### Formats
+
+| CSV   | XLS   | ABO   |
+| ----- | ----- | ----- |
+| CSV_A | XLS_A | ABO_A |
+| CSV_B | XLS_B | ABO_B |
+| CSV_C | XLS_C |
+| CSV_D |
+
+### Item Type
+
+The `items` parameter in body must contain order items in a certain form, so we have pre-created a type for you.
+
+You can import simply import it and use it
+```ts
+import { item } from "gopay-js";
+```
+
+Here is the form
+```ts
+type: string;
+name: string;
+amount: number;
+count: number;
+vat_rate: string;
+ean: number;
+product_url: string;
 ```
 
 ## 🙅🏿‍♂️ Used OSS
