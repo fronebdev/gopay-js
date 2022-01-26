@@ -18,9 +18,9 @@ export class Misc {
   }
 
   /**
-   * 
-   * @param currency 
-   * @returns 
+   *
+   * @param currency
+   * @returns
    */
   async getAllowedMethodes(currency: string) {
     const res = await axios({
@@ -42,9 +42,9 @@ export class Misc {
   }
 
   /**
-   * 
-   * @param data 
-   * @returns 
+   *
+   * @param data
+   * @returns
    */
   async accountStatement(data: misc.accountStatement) {
     const res = await axios({
