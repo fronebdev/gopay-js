@@ -12,6 +12,7 @@ import { eet } from "../types/eet";
 
 export class Misc {
   private __client: GoPay;
+    private __sufix = "/payments/payment";
 
   constructor({ client }: eet.Constructor) {
     this.__client = client;
