@@ -7,7 +7,7 @@
  */
 
 import axios from "axios";
-import { createToken, with_gopay } from "../helpers";
+import { createToken, handleError, with_gopay } from "../helpers";
 import { gopay } from "../types/gopay";
 
 export class GoPay {
@@ -44,7 +44,12 @@ export class GoPay {
       data: params,
     });
 
-    return res.data;
+    if(res.status == 200){
+      return res.data;
+    }else {
+      if (this.__log) 
+        handleError(res.data);
+    }
   }
 
   async getAccessToken() {
