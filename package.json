@@ -1,6 +1,6 @@
 {
   "name": "gopay-js",
-  "version": "1.5.1",
+  "version": "1.5.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
