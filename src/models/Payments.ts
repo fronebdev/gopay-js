@@ -8,6 +8,7 @@
 
 import axios from "axios";
 import { GoPay } from "..";
+import { handleError } from "../helpers";
 import { payments } from "../types/payments";
 
 export class Payments {
@@ -69,7 +70,12 @@ export class Payments {
       },
     });
 
-    return res.data;
+    if(res.status == 200){
+      return res.data;
+    }else {
+      if (this.__client.__log) 
+        handleError(res.data);
+    }
   }
 
   /**
@@ -87,7 +93,12 @@ export class Payments {
       },
     });
 
-    return res.data;
+    if(res.status == 200){
+      return res.data;
+    }else {
+      if (this.__client.__log) 
+        handleError(res.data);
+    }
   }
 
   /**
@@ -111,7 +122,13 @@ export class Payments {
       data: params,
     });
 
-    return res.data;
+    if(res.status == 200){
+      return res.data;
+    }else {
+      if (this.__client.__log) 
+        handleError(res.data);
+    }
+
   }
 
   /**
@@ -138,6 +155,11 @@ export class Payments {
       },
     });
 
-    return res.data;
+    if(res.status == 200){
+      return res.data;
+    }else {
+      if (this.__client.__log) 
+        handleError(res.data);
+    }
   }
 }

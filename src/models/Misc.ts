@@ -8,6 +8,7 @@
 
 import axios from "axios";
 import { GoPay } from "..";
+import { handleError } from "../helpers";
 import { misc } from "../types/misc";
 
 export class Misc {
@@ -38,7 +39,12 @@ export class Misc {
       },
     });
 
-    return res.data;
+    if(res.status == 200){
+      return res.data;
+    }else {
+      if (this.__client.__log) 
+        handleError(res.data);
+    }
   }
 
   /**
@@ -64,6 +70,11 @@ export class Misc {
       },
     });
 
-    return res.data;
+    if(res.status == 200){
+      return res.data;
+    }else {
+      if (this.__client.__log) 
+        handleError(res.data);
+    }
   }
 }
