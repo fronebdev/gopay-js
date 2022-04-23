@@ -751,7 +751,7 @@ coveralls@^3.0.11:
     js-yaml "^3.13.1"
     lcov-parse "^1.0.0"
     log-driver "^1.2.7"
-    minimist "^1.2.5"
+    minimist "^1.2.6"
     request "^2.88.2"
 
 cp-file@^6.2.0:
