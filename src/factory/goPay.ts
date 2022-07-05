@@ -11,7 +11,7 @@ import { createToken, handleError, with_gopay } from "../helpers";
 import { gopay } from "../types/gopay";
 
 export class GoPay {
-  public url: string = "https://gate.gopay.cz/api;";
+  public url: string = "https://gate.gopay.cz/api";
   public credentials: gopay.credentials;
   public __log: boolean;
 
