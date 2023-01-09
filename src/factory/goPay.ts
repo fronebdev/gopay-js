@@ -7,8 +7,8 @@
  */
 
 import axios from "axios";
-import { createToken, handleError, with_gopay } from "../helpers";
-import { gopay } from "../types/gopay";
+import { createToken, handleError, with_gopay } from "~/helpers";
+import { gopay } from "~/types/gopay";
 
 export class GoPay {
   public url: string = "https://gate.gopay.cz/api";
@@ -44,11 +44,10 @@ export class GoPay {
       data: params,
     });
 
-    if(res.status == 200){
+    if (res.status == 200) {
       return res.data;
-    }else {
-      if (this.__log) 
-        handleError(res.data);
+    } else {
+      if (this.__log) handleError(res.data);
     }
   }
 

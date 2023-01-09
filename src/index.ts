@@ -7,6 +7,6 @@
  */
 
 export { item } from "./types/public";
-export * from "./factory/GoPay";
+export * from "~/goPay";
 export * from "./models/Misc";
 export * from "./models/Payments";

@@ -7,9 +7,9 @@
  */
 
 import axios from "axios";
-import { GoPay } from "..";
-import { handleError } from "../helpers";
-import { misc } from "../types/misc";
+import { GoPay } from "~/goPay";
+import { handleError } from "~/helpers";
+import { misc } from "~/types/misc";
 
 export class Misc {
   private __client: GoPay;
@@ -39,11 +39,10 @@ export class Misc {
       },
     });
 
-    if(res.status == 200){
+    if (res.status == 200) {
       return res.data;
-    }else {
-      if (this.__client.__log) 
-        handleError(res.data);
+    } else {
+      if (this.__client.__log) handleError(res.data);
     }
   }
 
@@ -70,11 +69,10 @@ export class Misc {
       },
     });
 
-    if(res.status == 200){
+    if (res.status == 200) {
       return res.data;
-    }else {
-      if (this.__client.__log) 
-        handleError(res.data);
+    } else {
+      if (this.__client.__log) handleError(res.data);
     }
   }
 }

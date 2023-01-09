@@ -16,4 +16,4 @@ export const createToken = (clientID: string, clientSecret: string) =>
 
 export const handleError = (error: Error) => {
   console.log(error);
-}
+};
