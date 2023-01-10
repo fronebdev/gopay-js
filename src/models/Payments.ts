@@ -10,6 +10,7 @@ import axios from "axios";
 import { GoPay } from "~/goPay";
 import { handleError } from "~/helpers";
 import { payments } from "~/types/payments";
+import {Status} from "~/types/status";
 
 export class Payments {
   private __sufix = "/payments/payment";
@@ -82,7 +83,7 @@ export class Payments {
    * @param payment_id
    * @returns
    */
-  async getStatus(payment_id: number) {
+  async getStatus(payment_id: number): Promise<Status | null> {
     const res = await axios({
       url: this.__client.url + this.__sufix + "/" + payment_id,
       method: "GET",
@@ -92,11 +93,12 @@ export class Payments {
       },
     });
 
-    if (res.status == 200) {
-      return res.data;
-    } else {
-      if (this.__client.__log) handleError(res.data);
+    if (res.status !== 200) {
+        if (this.__client.__log) handleError(res.data);
+
+        return null
     }
+    return res.data as unknown as Status;
   }
 
   /**
