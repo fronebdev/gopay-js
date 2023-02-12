@@ -15,7 +15,13 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "~/goPay": ["./src/factory/goPay"],
+      "~/types/*": ["./src/types/*"],
+      "~/models/*": ["./src/models/*"],
+      "~/helpers": ["./src/helpers"]
+    }
   },
   "exclude": ["node_modules", "dist", "tests", "test", "test-helpers"]
 }

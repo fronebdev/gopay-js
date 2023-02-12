@@ -6,7 +6,7 @@
  * @year 2022
  */
 
-import { goPay } from "../factory/GoPay";
+import { goPay } from "~/GoPay";
 
 export namespace payments {
   export interface Constructor {
