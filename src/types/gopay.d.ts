@@ -6,8 +6,6 @@
  * @year 2022
  */
 
-
-
 export namespace gopay {
   export interface Constructor {
     credentials: credentials;
@@ -15,8 +13,7 @@ export namespace gopay {
     log: boolean;
   }
 
-
-  type TokenScopeType = 'payment-create' | 'payment-all'
+  type TokenScopeType = "payment-create" | "payment-all";
 
   export type credentials = {
     clientID: string;

@@ -8,7 +8,6 @@
 
 import { goPay } from "~/GoPay";
 
-
 export namespace payments {
   export interface Constructor {
     client: goPay;

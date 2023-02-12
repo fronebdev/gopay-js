@@ -10,7 +10,7 @@ import axios from "axios";
 import { GoPay } from "~/goPay";
 import { handleError } from "~/helpers";
 import { payments } from "~/types/payments";
-import {Status} from "~/types/status";
+import { Status } from "~/types/status";
 
 export class Payments {
   private __sufix = "/payments/payment";
@@ -94,9 +94,9 @@ export class Payments {
     });
 
     if (res.status !== 200) {
-        if (this.__client.__log) handleError(res.data);
+      if (this.__client.__log) handleError(res.data);
 
-        return null
+      return null;
     }
     return res.data as unknown as Status;
   }
